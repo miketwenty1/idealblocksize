@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+lnav {
+    float: left;
+    max-width: 100%;
+    margin: 0;
+    padding: 1em;
+}
+
+rnav {
+    float: right;
+    max-width: 100%;
+    margin: 0;
+    padding: 1em;
+}
+
+block {
+    float: left;
+    max-width: 33%;
+    margin: 0;
+    padding: 1em;
+}
+
+lnav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+lnav ul a {
+    text-decoration: none;
+}
+lnav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+
+detail {
+    size: 1;
+}
+
+
+</style>
+
+      <meta charset="utf-8">
+      <title>Ideal Blocksize</title>
+
+
+</head>
+<body>
+
+<div class="container">
+
+<header role="banner">
+   <h1>Ideal Blocksize</h1>
+   <p>Run your own scenario get interesting information</p>
+    <font size='1'><i>Current Blocksize = 1,000,000 Bytes This divided by 1024 twice will give you ~.95367 megabytes.</i></font>
+
+</header>
+  
+<lnav>
+  <ul>
+    <li><a href="#" onclick='SetDefaults();'>Click to see current Bitcoin blockchain stats</a></li>
+
+  </ul>
+</lnav>
+
+<article>
+
+<block>
+<form action="">
+Blocksize (in MB)<br>
+<input type="text" name="Blocksize" value="0.9536743164" id="blocksize" onblur='CalculateTotal();'>
+</form>
+</block>
+<block>
+<form action="">
+~Blocktime (minutes) <br>
+<input type="text" name="Blocktime" value="10" id="blocktime" onblur='CalculateTotal();'>
+</form>
+</block>
+<block>
+<form action="">
+Total Size Per Year (GB)<br>
+<input type="text" name="Total" id="total" value="48.983842134154685" onblur='CalculateBlocksize();'>
+</form>
+</block>
+
+
+
+   <footer>
+      <p>Please note this is very much a work in progress more to come soon!</p>
+      <p><i>Suggestions on how this can be better? 
+      </i><a href="https://twitter.com/miketwenty1/">@miketwenty1</a></p>
+   </footer>
+
+</body>
+
+
+<script>
+
+
+function CalculateTotal()
+{
+  var blocksize = document.getElementById("blocksize").value;
+  var blocktime = document.getElementById("blocktime").value;  
+  var blockPerYear = parseFloat(525960/blocktime);
+  var total = parseFloat(blocksize*blockPerYear)/1024;
+  document.getElementById('total').value=parseFloat(total);
+  document.form1.submit();
+}
+
+function CalculateBlocksize()
+{
+  var total = document.getElementById("total").value;
+  var blocktime = document.getElementById("blocktime").value;  
+  var blocksize = parseFloat(blocktime*(total*1024)/(525960));
+  
+  document.getElementById('blocksize').value=parseFloat(blocksize);
+  document.form1.submit();
+}
+
+function SetDefaults()
+{
+  
+  document.getElementById('blocksize').value=parseFloat("0.9536743164");
+  document.getElementById('blocktime').value=parseFloat("10");
+  document.getElementById('total').value=parseFloat("48.983842134154685");
+  document.form1.submit();
+}
+
+
+
+</script>
+</html>
