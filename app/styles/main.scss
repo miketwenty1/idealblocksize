@@ -1,0 +1,85 @@
+div.container {
+   width: 100%;
+   border: 1px solid gray;
+}
+
+header, footer {
+   padding: 1em;
+   color: white;
+   background-color: black;
+   clear: left;
+   text-align: center;
+}
+
+footer {
+   border-top:1px solid white;
+
+}
+
+lnav {
+   float: left;
+   max-width: 100%;
+   margin: 0;
+   padding: 1em;
+}
+
+measures {
+   float: left;
+   max-width: 100%;
+   margin: 0;
+   padding: 1em;
+   
+}
+
+rnav {
+   float: left;
+   margin: 0;
+   padding: 1em;
+   max-width: 100%;
+}
+
+block {
+   float: left;
+   max-width: 100%;
+   margin: 0;
+   padding: 1em;
+
+}
+
+lnav ul {
+   list-style-type: none;
+   padding: 0;
+   float: left;
+   text-decoration: none;
+   
+
+}
+
+a {
+   text-decoration: none;
+   color: orange;
+   font-weight: bold;
+
+
+}
+a:visited {
+   color: lightblue;
+   font-weight: bold;
+
+}
+
+article {
+   margin-left: 170px;
+   padding: 1em;
+   overflow: hidden;
+   min-width: 15%;
+   
+}
+
+lblock {
+   padding: 1em;
+   overflow: hidden;
+   float: left;
+   max-width: 25%;
+
+}
