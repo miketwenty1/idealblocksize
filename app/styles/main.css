@@ -1,8 +1,13 @@
-div.container {
-  width: 100%;
-  border: 1px solid gray; }
+* {
+  box-sizing: border-box; }
 
-header, footer {
+body, html {
+  width: 100%;
+  margin: 0; }
+  body .container, html .container {
+    width: 100%; }
+
+.header, .footer {
   padding: 1em;
   color: white;
   background-color: black;
