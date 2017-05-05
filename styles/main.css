@@ -5,24 +5,26 @@ body, html {
   width: 100%;
   margin: 0;
   text-align: center;
-  background-color: #5E6369; }
+  font-family: 'Varela Round', sans-serif; }
   body .container, html .container {
     width: 100%; }
 
 .header {
   width: 100%;
-  background-image: url("./images/bitcoinHeader.jpeg");
+  background-image: url("./images/serverRoom.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  height: 250px; }
+  height: 400px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column; }
   .header .headerCover {
     width: 100%;
-    height: 100%;
+    height: 65%;
     z-index: 10;
-    background: rgba(150, 150, 150, 0.5);
     color: #FDDD62;
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px #444;
     padding-top: 30px; }
     .header .headerCover h1 {
       font-size: 3em; }
@@ -35,9 +37,27 @@ body, html {
       .header .headerCover p {
         font-style: italic;
         font-size: 1em; } }
+  .header .notesContainer {
+    background: rgba(175, 175, 175, 0.3);
+    z-index: 5;
+    padding: 5px;
+    margin: 0;
+    height: 35%;
+    color: #fff; }
+    .header .notesContainer h3 {
+      margin: 1px;
+      padding-top: 10px; }
+    .header .notesContainer p {
+      margin: 1px;
+      font-size: 14px;
+      padding-bottom: 1px; }
+  @media screen and (max-width: 500px) {
+    .header .notesContainer {
+      padding: 2px; }
+      .header .notesContainer h3 {
+        padding-top: 0; } }
 
 .header, .footer {
-  font-family: 'Hammersmith One', sans-serif;
   clear: left;
   text-align: center; }
 
@@ -46,38 +66,32 @@ body, html {
   background: rgba(150, 150, 150, 0.7);
   padding: 1em; }
 
-.notesContainer {
-  font-family: 'Baloo', cursive;
-  background: #eee;
-  padding: 20px;
-  margin: 0; }
-  .notesContainer li {
-    text-align: left;
-    color: #578FBF; }
+.mainBody {
+  background-image: url("./images/bitcoinBack.png");
+  background-size: cover; }
 
 .defaultButton {
-  font-family: 'Baloo', cursive;
   margin: 0 auto;
   width: 25%;
   padding: 8px;
-  border-radius: 3px;
+  border-radius: 8px;
   margin-top: 20px;
-  background-color: #D7EAF9;
+  background-color: white;
   color: #f82525; }
 
 .avgCapacity {
-  font-family: 'Baloo', cursive;
   text-align: center;
   width: 65%;
   margin: 10px auto;
-  border: 4px solid #578FBF;
-  border-radius: 7px;
+  border: 4px solid #f3f3f3;
+  border-radius: 12px;
   padding: 15px;
-  background-color: #E2E3DB; }
+  background-color: rgba(50, 50, 50, 0.9); }
   .avgCapacity h2 {
-    color: #578FBF; }
+    color: #FB7E37;
+    text-shadow: 1px 1px #f3f3f3; }
   .avgCapacity .capPer {
-    color: #E6873A; }
+    color: #FB7E37; }
 
 @media screen and (max-width: 525px) {
   .avgCapacity {
@@ -86,7 +100,6 @@ body, html {
   .defaultButton {
     width: 50%; } }
 .valuesContainer {
-  font-family: 'Baloo', cursive;
   width: 90%;
   text-align: center;
   display: flex;
@@ -97,16 +110,17 @@ body, html {
   .valuesContainer .valueBox {
     width: 100%;
     margin-bottom: 15px;
-    border: 4px solid #578FBF;
-    border-radius: 7px;
+    border: 4px solid #f3f3f3;
+    border-radius: 12px;
     padding: 15px 0 15px 0;
-    background-color: #E2E3DB; }
+    background-color: rgba(50, 50, 50, 0.9); }
     .valuesContainer .valueBox .valTitle {
       margin: 0;
-      color: #578FBF; }
+      color: #FB7E37;
+      text-shadow: 1px 1px #f3f3f3; }
     .valuesContainer .valueBox .valUnits {
       margin: 4px;
-      color: #5E6369; }
+      color: #f3f3f3; }
     .valuesContainer .valueBox input {
       margin: 4px; }
     .valuesContainer .valueBox .rangeBars {
@@ -114,8 +128,8 @@ body, html {
     .valuesContainer .valueBox .valInput {
       text-align: center;
       border: none;
-      background-color: #E2E3DB;
-      color: #E6873A; }
+      background-color: rgba(50, 50, 50, 0.9);
+      color: #FB7E37; }
   @media screen and (min-width: 525px) {
     .valuesContainer .valueBox {
       width: 45%; } }
@@ -127,14 +141,13 @@ body, html {
   width: 100%;
   margin: 0;
   padding: 10px;
-  background: #ddd;
-  color: #5E6369; }
+  background: #f3f3f3; }
   .extrasContainer .extraHR {
     width: 50%; }
 
 a {
   text-decoration: none;
-  color: #E6873A;
+  color: #FB7E37;
   font-weight: bold; }
 
 a:visited {

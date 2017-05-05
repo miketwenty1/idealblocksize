@@ -2,18 +2,18 @@
 
 // Background Image -> https://pixabay.com/en/bitcoin-economy-currency-finance-1995332/
 
-$darkGray: #5E6369;
-$offBlue: #D7EAF9;
-$offOrange: #E6873A;
-$offTan: #E2E3DB;
+$offYellow: #FDDD62;
+$offOrange: #FB7E37;
+$offWhite: #f3f3f3;
+
+$valueBoxes: rgba(50,50,50, 0.9);
 
 
 body, html {
    width: 100%;
    margin: 0;
    text-align: center;
-   background-color: $darkGray;
-
+   font-family: 'Varela Round', sans-serif;
    .container {
       width: 100%;
    }
@@ -21,18 +21,20 @@ body, html {
 
 .header {
    width: 100%;
-   background-image: url('./images/bitcoinHeader.jpeg');
+   background-image: url('./images/serverRoom.jpeg');
    background-size: cover;
    background-repeat: no-repeat;
    background-position: 50% 50%;
-   height: 250px;
+   height: 400px;
+   display: flex;
+   justify-content: flex-end;
+   flex-direction: column;
    .headerCover {
       width: 100%;
-      height: 100%;
+      height: 65%;
       z-index: 10;
-      background: rgba(150,150,150, 0.5);
-      color: #FDDD62;
-      text-shadow: 2px 2px black;
+      color: $offYellow;
+      text-shadow: 2px 2px #444;
       padding-top: 30px;
       h1 {
          font-size: 3em;
@@ -51,10 +53,34 @@ body, html {
          }
       }
    }
+   .notesContainer{
+      background: rgba(175,175,175, 0.3);
+      z-index: 5;
+      padding: 5px;
+      margin: 0;
+      height: 35%;
+      color: #fff;
+      h3{
+         margin: 1px;
+         padding-top: 10px;
+      }
+      p {
+         margin: 1px;
+         font-size: 14px;
+         padding-bottom: 1px;
+      }
+   }
+   @media screen and (max-width: 500px){
+      .notesContainer{
+         padding: 2px;
+            h3{
+               padding-top: 0;
+            }
+         }
+   }
 }
 
 .header, .footer {
-   font-family: 'Hammersmith One', sans-serif;
    clear: left;
    text-align: center;
 }
@@ -65,39 +91,33 @@ body, html {
    padding: 1em;
 }
 
-.notesContainer{
-   font-family: 'Baloo', cursive;
-   background: #eee;
-   padding: 20px;
-   margin: 0;
-   li {
-      text-align: left;
-      color: #578FBF;
-   }
+.mainBody {
+   background-image: url('./images/bitcoinBack.png');
+   background-size: cover;
 }
 
+
 .defaultButton{
-   font-family: 'Baloo', cursive;
    margin: 0 auto;
    width: 25%;
    padding: 8px;
-   border-radius: 3px;
+   border-radius: 8px;
    margin-top: 20px;
-   background-color: $offBlue;
+   background-color: white;
    color: #f82525;
 }
 
 .avgCapacity{
-   font-family: 'Baloo', cursive;
    text-align: center;
    width: 65%;
    margin: 10px auto;
-   border: 4px solid #578FBF;
-   border-radius: 7px;
+   border: 4px solid $offWhite;
+   border-radius: 12px;
    padding: 15px;
-   background-color: $offTan;
+   background-color: $valueBoxes;
    h2 {
-      color: #578FBF;
+      color: $offOrange;
+      text-shadow: 1px 1px $offWhite;
    }
    .capPer {
       color: $offOrange;
@@ -114,7 +134,6 @@ body, html {
 }
 
 .valuesContainer {
-   font-family: 'Baloo', cursive;
    width: 90%;
    text-align: center;
    display: flex;
@@ -125,17 +144,18 @@ body, html {
    .valueBox{
       width: 100%;
       margin-bottom: 15px;
-      border: 4px solid #578FBF;
-      border-radius: 7px;
+      border: 4px solid $offWhite;
+      border-radius: 12px;
       padding: 15px 0 15px 0;
-      background-color: $offTan;
+      background-color: $valueBoxes;
       .valTitle{
          margin:0;
-         color: #578FBF;
+         color: $offOrange;
+         text-shadow: 1px 1px $offWhite;
       }
       .valUnits {
          margin: 4px;
-         color: $darkGray;
+         color: $offWhite;
       }
       input{
          margin: 4px;
@@ -146,7 +166,7 @@ body, html {
       .valInput {
          text-align: center;
          border: none;
-         background-color: $offTan;
+         background-color: $valueBoxes;
          color: $offOrange;
       }
    }
@@ -166,8 +186,7 @@ body, html {
    width: 100%;
    margin: 0;
    padding: 10px;
-   background: #ddd;
-   color: $darkGray;
+   background: $offWhite;
    .extraHR {
       width: 50%;
    }

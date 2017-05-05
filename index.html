@@ -5,26 +5,23 @@
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel='stylesheet' href="./styles/normalize.css" />
-  	<link href="https://fonts.googleapis.com/css?family=Baloo|Hammersmith+One" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
  	<link rel='stylesheet' href="./styles/main.css">
 </head>
 <body>
-<header class="header">
+<div class="header">
   <div class='headerCover'>
     <h1>Ideal Bitcoin Blocksize</h1>
     <p>Run your own scenario get interesting information</p>
   </div>
-</header>
-
-<div class='notesContainer'>
-  <ul>
-    <h2>Notes</h2>
-    <li> <p>You might find some of these fields irrelevant.  Some of these are just to see theoretical #'s / Avg's / etc.</p></li>
-    <li><p>Some of of these Averages could be guestimations. These averages could very well be correct but might be misleading in reference to median.</p></li>
-    <li><p>Hint: Type in a value if the slider bar doesn't allow your desired value.</p></li>
-  </ul>
+  <div class='notesContainer'>
+    <h3>Notes</h3>
+    <p>You might find some of these fields irrelevant.  Some of these are just to see theoretical #'s / Avg's / etc.</p>
+    <p>Some of of these Averages could be guestimations. These averages could very well be correct but might be misleading in reference to median.</p>
+    <p>Hint: Type in a value if the slider bar doesn't allow your desired value.</p>
+ </div>
 </div>
-
+<div class='mainBody'>
 <button class='defaultButton' onclick='SetDefaults()'>Reset to Defaults</button>
 
 <div class='avgCapacity'>
@@ -117,7 +114,7 @@
 	</div>
 	         
 </div>
-
+</div>
 
  <div class='extrasContainer' >
     <p>Current Blocksize = 1,000,000 Bytes This divided<br> 
