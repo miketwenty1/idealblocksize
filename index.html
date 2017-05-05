@@ -4,14 +4,145 @@
 <title>Ideal Blocksize</title>
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel='stylesheet' href="/app/styles/normalize.css" />
- 	<link rel='stylesheet' href='/app/styles/main.css'/>
+  	<link rel='stylesheet' href="./styles/normalize.css" />
+  	<link href="https://fonts.googleapis.com/css?family=Baloo|Hammersmith+One" rel="stylesheet">
+ 	<link rel='stylesheet' href="./styles/main.css">
 </head>
 <body>
+<header class="header">
+  <div class='headerCover'>
+    <h1>Ideal Bitcoin Blocksize</h1>
+    <p>Run your own scenario get interesting information</p>
+  </div>
+</header>
 
-<div id='app'>
-Loading...
+<div class='notesContainer'>
+  <ul>
+    <h2>Notes</h2>
+    <li> <p>You might find some of these fields irrelevant.  Some of these are just to see theoretical #'s / Avg's / etc.</p></li>
+    <li><p>Some of of these Averages could be guestimations. These averages could very well be correct but might be misleading in reference to median.</p></li>
+    <li><p>Hint: Type in a value if the slider bar doesn't allow your desired value.</p></li>
+  </ul>
 </div>
 
-<script type="text/javascript" src="bundle.js"></script></body>
+<button class='defaultButton' onclick='defaultSettings()'>Reset to Defaults</button>
+
+<div class='avgCapacity'>
+   <h2>Average Capacity of Blocks</h2>
+   <input type="range"  id="capacityBar" width="100px" min="0" max="100" value="100" step="1" oninput="capacityBar(this.value)" /> <br>
+   <span class='capPer' id="capacity"> 100</span><span class='capPer'> % </span>
+</div>
+
+<div class='valuesContainer'>
+         
+	<div class='valueBox'>
+	  <form action="">
+	    <h3 class='valTitle'>Max Blocksize</h3>
+	    <p class='valUnits'>(in MB)</p>
+	    <input type="text" class='valInput' value="0.9536743164" id="blocksize" onblur="blocksizeBar(this.value)" />
+	  </form>
+	  <input type="range" class='rangeBars' id="blocksizeBar" width="100px" min=".1" max="100" value=".9536743164" step=".1" oninput="blocksizeBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	   <form action="">
+	     <h3 class='valTitle'>Avg Blocktime </h3>
+	     <p class='valUnits'>(in Minutes)</p>
+	     <input type="text" class='valInput' value="10" id="avgBlocktime" value="10" onblur="avgBlocktimeBar(this.value)"/>
+	   </form>
+	   <input type="range" class='rangeBars' id="avgBlocktimeBar" width="100px" min=".1" max="600" value="10" step=".1" oninput="avgBlocktimeBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	   <form action="">
+	     <h3 class='valTitle'>Blockchain Increase </h3>
+	     <p class='valUnits'>(Size Per Year in GB)</p>
+	     <input type="text" class='valInput' id="blockchainIncrease" value="48.983842134154685" onblur="blockchainIncreaseBar(this.value)" />
+	   </form>
+	   <input type="range" class='rangeBars' id="blockchainIncreaseBar" width="100px" min=".1" max="10000" value="48.983842134154685" step=".1" oninput="blockchainIncreaseBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	  <form action="">
+	    <h3 class='valTitle'>Unique Bitcoiners</h3>
+	    <p class='valUnits'>(# of People)</p>
+	    <input type="text" class='valInput' value="10,000,000" id="uniqueBitcoiners" onblur="uniqueBitcoinersBar(this.value)" />
+	  </form>
+	  <input type="range" class='rangeBars' id="uniqueBitcoinersBar" width="100px" min="100000" max="7000000000" value="10000000" step="1" oninput="uniqueBitcoinersBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	   <form action="">
+	     <h3 class='valTitle'>Overall Avg Tx's</h3>
+	     <p class='valUnits'>(Per Second)</p>
+	     <input type="text" class='valInput' value="3.623333333333" id="overallTxPerSec" onblur="overallTxPerSecBar(this.value)" />
+	   </form>
+	   <input type="range" class='rangeBars' id="overallTxPerSecBar" width="100px" min=".1" max="20000" value="3.623333333333" step=".1" oninput="overallTxPerSecBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	   <form action="">
+	     <h3 class='valTitle'>Avg # of Tx's </h3>
+	     <p class='valUnits'>(Per Person Per Year)</p>
+	     <input type="text" class='valInput' id="avgTxPerPersPerYear" value="11.4343704" onblur="avgTxPerPersPerYearBar(this.value)" />
+	   </form>
+	   <input type="range" class='rangeBars' id="avgTxPerPersPerYearBar" width="100px" min="1" max="10000" value="11.4343704" step=".25" oninput="avgTxPerPersPerYearBar(this.value)" /> <br/>
+	</div>
+	                               
+	<div class='valueBox'>
+	   <form action="">
+	     <h3 class='valTitle'>Avg Tx Size</h3>
+	     <p class='valUnits'>(in Bytes)</p>
+	     <input type="text" class='valInput' id="avgTxSize" value="459.98160074" onblur="avgTxSizeBar(this.value)" />
+	   </form>
+	   <input type="range" class='rangeBars' id="avgTxSizeBar" width="100px" min="40" max="10000" value=".9536743164" step="1" oninput="avgTxSizeBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	   <form action="">
+	     <h3 class='valTitle'>Avg # of Tx's</h3>
+	     <p class='valUnits'>(Per Block)</p>
+	     <input type="text" class='valInput' id="avgTxPerBlock" value="2174" onblur="avgTxPerBlockBar(this.value)" />
+	   </form>
+	   <input type="range" class='rangeBars' id="avgTxPerBlockBar" width="100px" min="1" max="100000" value="2174" step="1" oninput="avgTxPerBlockBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	  <form action="">
+	   <h3 class='valTitle'>Max Tx Per Year</h3>
+	   <p class='valUnits'>(Bitcoin Tx's)</p>
+	   <input type="text" class='valInput' value="114,343,704" id="maxTxPerYear" onblur="maxTxPerYearBar(this.value)" />
+	  </form>
+	  <input type="range" class='rangeBars' id="maxTxPerYearBar" width="100px" min="1000000" max="100000000000" value="114343704" step="1" oninput="maxTxPerYearBar(this.value)" /> <br/>
+	</div>
+	         
+</div>
+
+
+ <div class='extrasContainer' >
+    <p>Current Blocksize = 1,000,000 Bytes This divided<br> 
+    by 1024 twice will give you ~.95367 Megabytes.</p>
+    <hr class="extraHR"/>
+    <p>How minutes are being calculated for year: <br>
+    (1 year * 365.25 days * 24 hours * 60 minutes)
+
+ </div>
+
+
+<footer class="footer">
+  <div class='foot1'>
+	<p>Please note this is very much a work in progress, more to come soon! (like segwit and Lightning Network scenarios) </p>
+	<p><i>Suggestions on how this can be better?</i><a href="https://twitter.com/miketwenty1/"> @miketwenty1</a></p>
+  </div>
+  <hr />
+  <div class='foot2'>
+	<p>Listen to us talk about segwit, transaction malleablity, and lightning network on SoundCloud,<a href="https://soundcloud.com/blocktime/blocktime-ep-4-segwit-and-transaction-malleability-discussion"> Blocktime Podcast</a></p>
+    <p>Enjoy What you see? Donate to Bitcoin Education through the TAB meetup group, <a href="https://www.meetup.com/The-Atlanta-Blockchain/"> Meetup Link</a></p>
+    <p>1MZjTbx1Qho2KY5s7EetLcQBXCyjqySpUh</p>
+  </div>
+</footer>
+
+
+<script type='text/javascript' src='/scripts/main.js'></script>
+</body>
 </html>

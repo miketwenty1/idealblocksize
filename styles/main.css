@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box; }
+
+body, html {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  background-color: #5E6369; }
+  body .container, html .container {
+    width: 100%; }
+
+.header {
+  width: 100%;
+  background-image: url("./images/bitcoinHeader.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 250px; }
+  .header .headerCover {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgba(150, 150, 150, 0.5);
+    color: #FDDD62;
+    text-shadow: 2px 2px black;
+    padding-top: 30px; }
+    .header .headerCover h1 {
+      font-size: 3em; }
+    .header .headerCover p {
+      font-style: italic;
+      font-size: 1.5em; }
+    @media screen and (max-width: 600px) {
+      .header .headerCover h1 {
+        font-size: 2.2em; }
+      .header .headerCover p {
+        font-style: italic;
+        font-size: 1em; } }
+
+.header, .footer {
+  font-family: 'Hammersmith One', sans-serif;
+  clear: left;
+  text-align: center; }
+
+.footer {
+  color: white;
+  background: rgba(150, 150, 150, 0.7);
+  padding: 1em; }
+
+.notesContainer {
+  font-family: 'Baloo', cursive;
+  background: #eee;
+  padding: 20px;
+  margin: 0; }
+  .notesContainer li {
+    text-align: left;
+    color: #578FBF; }
+
+.defaultButton {
+  font-family: 'Baloo', cursive;
+  margin: 0 auto;
+  width: 25%;
+  padding: 8px;
+  border-radius: 3px;
+  margin-top: 20px;
+  background-color: #D7EAF9;
+  color: #f82525; }
+
+.avgCapacity {
+  font-family: 'Baloo', cursive;
+  text-align: center;
+  width: 65%;
+  margin: 10px auto;
+  border: 4px solid #578FBF;
+  border-radius: 7px;
+  padding: 15px;
+  background-color: #E2E3DB; }
+  .avgCapacity h2 {
+    color: #578FBF; }
+  .avgCapacity .capPer {
+    color: #E6873A; }
+
+@media screen and (max-width: 525px) {
+  .avgCapacity {
+    width: 90%; }
+
+  .defaultButton {
+    width: 50%; } }
+.valuesContainer {
+  font-family: 'Baloo', cursive;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto; }
+  .valuesContainer .valueBox {
+    width: 100%;
+    margin-bottom: 15px;
+    border: 4px solid #578FBF;
+    border-radius: 7px;
+    padding: 15px 0 15px 0;
+    background-color: #E2E3DB; }
+    .valuesContainer .valueBox .valTitle {
+      margin: 0;
+      color: #578FBF; }
+    .valuesContainer .valueBox .valUnits {
+      margin: 4px;
+      color: #5E6369; }
+    .valuesContainer .valueBox input {
+      margin: 4px; }
+    .valuesContainer .valueBox .rangeBars {
+      color: blue; }
+    .valuesContainer .valueBox .valInput {
+      text-align: center;
+      border: none;
+      background-color: #E2E3DB;
+      color: #E6873A; }
+  @media screen and (min-width: 525px) {
+    .valuesContainer .valueBox {
+      width: 45%; } }
+  @media screen and (min-width: 800px) {
+    .valuesContainer .valueBox {
+      width: 28%; } }
+
+.extrasContainer {
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  background: #ddd;
+  color: #5E6369; }
+  .extrasContainer .extraHR {
+    width: 50%; }
+
+a {
+  text-decoration: none;
+  color: #E6873A;
+  font-weight: bold; }
+
+a:visited {
+  color: lightblue;
+  font-weight: bold; }
+
+article {
+  margin-left: 170px;
+  padding: 1em;
+  overflow: hidden;
+  min-width: 15%; }
+
+/*# sourceMappingURL=main.css.map */
