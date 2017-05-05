@@ -1,0 +1,212 @@
+*{box-sizing: border-box;}
+
+// Background Image -> https://pixabay.com/en/bitcoin-economy-currency-finance-1995332/
+
+$offYellow: #FDDD62;
+$offOrange: #FB7E37;
+$offWhite: #f3f3f3;
+
+$valueBoxes: rgba(50,50,50, 0.9);
+
+
+body, html {
+   width: 100%;
+   margin: 0;
+   text-align: center;
+   font-family: 'Varela Round', sans-serif;
+   .container {
+      width: 100%;
+   }
+}
+
+.header {
+   width: 100%;
+   background-image: url('./images/serverRoom.jpeg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+   height: 400px;
+   display: flex;
+   justify-content: flex-end;
+   flex-direction: column;
+   .headerCover {
+      width: 100%;
+      height: 65%;
+      z-index: 10;
+      color: $offYellow;
+      text-shadow: 2px 2px #444;
+      padding-top: 30px;
+      h1 {
+         font-size: 3em;
+      }
+      p {
+         font-style: italic;
+         font-size: 1.5em;
+      }
+      @media screen and (max-width: 600px){
+          h1 {
+            font-size: 2.2em;
+         }
+         p {
+            font-style: italic;
+            font-size: 1em;
+         }
+      }
+   }
+   .notesContainer{
+      background: rgba(175,175,175, 0.3);
+      z-index: 5;
+      padding: 5px;
+      margin: 0;
+      height: 35%;
+      color: #fff;
+      h3{
+         margin: 1px;
+         padding-top: 10px;
+      }
+      p {
+         margin: 1px;
+         font-size: 14px;
+         padding-bottom: 1px;
+      }
+   }
+   @media screen and (max-width: 500px){
+      .notesContainer{
+         padding: 2px;
+            h3{
+               padding-top: 0;
+            }
+         }
+   }
+}
+
+.header, .footer {
+   clear: left;
+   text-align: center;
+}
+
+.footer {
+   color: white;
+   background: rgba(150,150,150, 0.7);
+   padding: 1em;
+}
+
+.mainBody {
+   background-image: url('./images/bitcoinBack.png');
+   background-size: cover;
+}
+
+
+.defaultButton{
+   margin: 0 auto;
+   width: 25%;
+   padding: 8px;
+   border-radius: 8px;
+   margin-top: 20px;
+   background-color: white;
+   color: #f82525;
+}
+
+.avgCapacity{
+   text-align: center;
+   width: 65%;
+   margin: 10px auto;
+   border: 4px solid $offWhite;
+   border-radius: 12px;
+   padding: 15px;
+   background-color: $valueBoxes;
+   h2 {
+      color: $offOrange;
+      text-shadow: 1px 1px $offWhite;
+   }
+   .capPer {
+      color: $offOrange;
+   }
+}
+
+@media screen and (max-width: 525px){
+   .avgCapacity{
+      width: 90%;
+   }
+   .defaultButton{
+      width: 50%;
+   }
+}
+
+.valuesContainer {
+   width: 90%;
+   text-align: center;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-wrap: wrap;
+   margin: 0 auto;
+   .valueBox{
+      width: 100%;
+      margin-bottom: 15px;
+      border: 4px solid $offWhite;
+      border-radius: 12px;
+      padding: 15px 0 15px 0;
+      background-color: $valueBoxes;
+      .valTitle{
+         margin:0;
+         color: $offOrange;
+         text-shadow: 1px 1px $offWhite;
+      }
+      .valUnits {
+         margin: 4px;
+         color: $offWhite;
+      }
+      input{
+         margin: 4px;
+      }
+      .rangeBars {
+         color: blue;
+      }
+      .valInput {
+         text-align: center;
+         border: none;
+         background-color: $valueBoxes;
+         color: $offOrange;
+      }
+   }
+   @media screen and (min-width: 525px){
+      .valueBox{
+        width: 45%;
+      }
+   }
+   @media screen and (min-width: 800px){
+      .valueBox{
+        width: 28%;
+      }
+   }
+}
+
+.extrasContainer{
+   width: 100%;
+   margin: 0;
+   padding: 10px;
+   background: $offWhite;
+   .extraHR {
+      width: 50%;
+   }
+}
+
+a {
+   text-decoration: none;
+   color: $offOrange;
+   font-weight: bold;
+}
+
+a:visited {
+   color: lightblue;
+   font-weight: bold;
+}
+
+article {
+   margin-left: 170px;
+   padding: 1em;
+   overflow: hidden;
+   min-width: 15%;
+   
+}

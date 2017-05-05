@@ -1,592 +1,145 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-div.container {
-   width: 100%;
-   border: 1px solid gray;
-}
-
-header, footer {
-   padding: 1em;
-   color: white;
-   background-color: black;
-   clear: left;
-   text-align: center;
-
-
-}
-
-footer {
-   border-top:1px solid white;
-
-}
-
-lnav {
-   float: left;
-   max-width: 100%;
-   margin: 0;
-   padding: 1em;
-}
-
-measures {
-   float: left;
-   max-width: 100%;
-   margin: 0;
-   padding: 1em;
-   <!--border: 1px solid gray;-->
-}
-
-rnav {
-   float: left;
-   margin: 0;
-   padding: 1em;
-   max-width: 100%;
-}
-
-block {
-   float: left;
-   max-width: 100%;
-   margin: 0;
-   padding: 1em;
-
-}
-
-lnav ul {
-   list-style-type: none;
-   padding: 0;
-   float: left;
-   text-decoration: none;
-   
-
-}
-
-a {
-   text-decoration: none;
-   color: orange;
-   font-weight: bold;
-
-
-}
-a:visited {
-   color: lightblue;
-   font-weight: bold;
-
-}
-
-article {
-   margin-left: 170px;
-   padding: 1em;
-   overflow: hidden;
-   min-width: 15%;
-   
-}
-
-lblock {
-   padding: 1em;
-   overflow: hidden;
-   float: left;
-   max-width: 25%;
-
-}
-
-
-
-
-
-</style>
-
-<meta charset="utf-8">
 <title>Ideal Blocksize</title>
-
-
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel='stylesheet' href="./styles/normalize.css" />
+  	<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+ 	<link rel='stylesheet' href="./styles/main.css">
 </head>
 <body>
-
-<div class="container">
-
-   <header role="banner">
-      <h1>Ideal Bitcoin Blocksize</h1>
-      <i><p>Run your own scenario get interesting information</p></i>
-
-   </header>
-   <center>
-   <p>Average Capacity of Blocks</p>
-   <input type="range"  id="capacityBar" width="100px" min="0" max="100" value="100" step="1" oninput="capacityBar(this.value)" /> <br>
-   <span id="capacity"> 100</span>%
-   </center>
-   <block>
-
-      <lblock>
-
-         <ul>
-            <a href="#" onclick='SetDefaults();'>Click Here Go Back to Defaults</a>
-            <p>Notes<p>
-            <li> <p>You might find some of these fields irrelevant.  Some of these are just to see theoretical #'s / Avg's / etc.</p></li>
-            <li><p>Some of of these Averages could be guestimations. These averages could very well be correct but might be misleading in reference to median.</p></li>
-            <li><p>Hint: Type in a value if the slider bar doesn't allow your desired value.</p></li>
-           
-            
-         </ul>
-      
-      </lblock>
-
-
-      <measures>
-      
-         <lnav>
-            <block>
-               <form action="">
-               Max Blocksize<br>(in MB)<br>
-               <input type="text" value="0.9536743164" id="blocksize" onblur="blocksizeBar(this.value)" >
-            </form>
-            <input type="range" id="blocksizeBar" width="100px" min=".1" max="100" value=".9536743164" step=".1" oninput="blocksizeBar(this.value)" /> <br>
-            </block>
-
-            <block>
-               <form action="">
-               Avg Blocktime <br>(in Minutes) <br>
-               <input type="text" value="10" id="avgBlocktime" value="10" onblur="avgBlocktimeBar(this.value)">
-               </form>
-               <input type="range" id="avgBlocktimeBar" width="100px" min=".1" max="600" value="10" step=".1" oninput="avgBlocktimeBar(this.value)" /> <br>
-            </block>
-
-            <block>
-               <form action="">
-               Blockchain Increase <br>(Size Per Year in GB)
-               <br>
-               <input type="text" id="blockchainIncrease" value="48.983842134154685" onblur="blockchainIncreaseBar(this.value)">
-               </form>
-               <input type="range" id="blockchainIncreaseBar" width="100px" min=".1" max="10000" value="48.983842134154685" step=".1" oninput="blockchainIncreaseBar(this.value)" /> <br>
-            </block>
-         </lnav>
-         <br>
-         <lnav>
-            <block>
-               <form action="">
-               Unique Bitcoiners<br>(# of People)<br>
-               <input type="text" value="10,000,000" id="uniqueBitcoiners" onblur="uniqueBitcoinersBar(this.value)">
-            </form>
-            <input type="range" id="uniqueBitcoinersBar" width="100px" min="100000" max="7000000000" value="10000000" step="1" oninput="uniqueBitcoinersBar(this.value)" /> <br>
-            </block>
-
-            <block>
-               <form action="">
-               Overall Avg Tx's<br>(Per Second)<br>
-               <input type="text" value="3.623333333333" id="overallTxPerSec" onblur="overallTxPerSecBar(this.value)">
-               </form>
-               <input type="range" id="overallTxPerSecBar" width="100px" min=".1" max="20000" value="3.623333333333" step=".1" oninput="overallTxPerSecBar(this.value)" /> <br>
-            </block>
-
-            <block>
-               <form action="">
-               Avg # of Tx's <br>(Per Person Per Year)<br>
-               <input type="text" id="avgTxPerPersPerYear" value="11.4343704" onblur="avgTxPerPersPerYearBar(this.value)">
-               </form>
-               <input type="range" id="avgTxPerPersPerYearBar" width="100px" min="1" max="10000" value="11.4343704" step=".25" oninput="avgTxPerPersPerYearBar(this.value)" /> <br>
-            </block>
-                        
-         </lnav>
-         <br>
-         <lnav>
-            <block>
-               <form action="">
-               Avg Tx Size<br>(in Bytes)
-               <br>
-               <input type="text" id="avgTxSize" value="459.98160074" onblur="avgTxSizeBar(this.value)">
-               </form>
-               <input type="range" id="avgTxSizeBar" width="100px" min="40" max="10000" value=".9536743164" step="1" oninput="avgTxSizeBar(this.value)" /> <br>
-            </block>
-            <block>
-               <form action="">
-               Avg # of Tx's<br>(Per Block)<br>
-               <input type="text" id="avgTxPerBlock" value="2174" onblur="avgTxPerBlockBar(this.value)">
-               </form>
-               <input type="range" id="avgTxPerBlockBar" width="100px" min="1" max="100000" value="2174" step="1" oninput="avgTxPerBlockBar(this.value)" /> <br>
-            </block>
-            <block>
-               <form action="">
-               Max Tx Per Year<br>(Bitcoin Tx's)<br>
-               <input type="text" value="114,343,704" id="maxTxPerYear" onblur="maxTxPerYearBar(this.value)">
-            </form>
-            <input type="range" id="maxTxPerYearBar" width="100px" min="1000000" max="100000000000" value="114343704" step="1" oninput="maxTxPerYearBar(this.value)" /> <br>
-            </block>
-         </lnav>
-      
-      </measures>
-
-
-      <article>
-         <block>
-            <p>Current Blocksize = 1,000,000 Bytes This divided<br> 
-            by 1024 twice will give you ~.95367 Megabytes.</p>
-            <br>
-            <p>How minutes are being calculated for year: <br>
-            (1 year * 365.25 days * 24 hours * 60 minutes)
-
-         </block>
-
-         
-      </article>
-
-   </block>
-
-   <footer>
-      <p>Please note this is very much a work in progress, more to come soon! (like segwit and Lightning Network scenarios) </p>
-      <p><i>Suggestions on how this can be better?</i><a href="https://twitter.com/miketwenty1/"> @miketwenty1</a></p>
-            
-   </footer>
-   <footer>
-      <p>Listen to us talk about segwit, transaction malleablity, and lightning network on SoundCloud,<a href="https://soundcloud.com/blocktime/blocktime-ep-4-segwit-and-transaction-malleability-discussion"> Blocktime Podcast</a></p>
-      <p>Enjoy What you see? Donate to Bitcoin Education through the TAB meetup group, <a href="https://www.meetup.com/The-Atlanta-Blockchain/"> Meetup Link</a></p>
-      <p>1MZjTbx1Qho2KY5s7EetLcQBXCyjqySpUh</p>
-   </footer>
+<div class="header">
+  <div class='headerCover'>
+    <h1>Ideal Bitcoin Blocksize</h1>
+    <p>Run your own scenario get interesting information</p>
+  </div>
+  <div class='notesContainer'>
+    <h3>Notes</h3>
+    <p>You might find some of these fields irrelevant.  Some of these are just to see theoretical #'s / Avg's / etc.</p>
+    <p>Some of of these Averages could be guestimations. These averages could very well be correct but might be misleading in reference to median.</p>
+    <p>Hint: Type in a value if the slider bar doesn't allow your desired value.</p>
+ </div>
 </div>
+<div class='mainBody'>
+<button class='defaultButton' onclick='SetDefaults()'>Reset to Defaults</button>
+
+<div class='avgCapacity'>
+   <h2>Average Capacity of Blocks</h2>
+   <input type="range"  id="capacityBar" width="100px" min="0" max="100" value="100" step="1" oninput="capacityBar(this.value)" /> <br>
+   <span class='capPer' id="capacity"> 100</span><span class='capPer'> % </span>
+</div>
+
+<div class='valuesContainer'>
+         
+	<div class='valueBox'>
+	  <form action="">
+	    <h3 class='valTitle'>Max Blocksize</h3>
+	    <p class='valUnits'>(in MB)</p>
+	    <input type="text" class='valInput' value="0.9536743164" id="blocksize" onblur="blocksizeBar(this.value)" />
+	  </form>
+	  <input type="range" class='rangeBars' id="blocksizeBar" width="100px" min=".1" max="100" value=".9536743164" step=".1" oninput="blocksizeBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	   <form action="">
+	     <h3 class='valTitle'>Avg Blocktime </h3>
+	     <p class='valUnits'>(in Minutes)</p>
+	     <input type="text" class='valInput' value="10" id="avgBlocktime" value="10" onblur="avgBlocktimeBar(this.value)"/>
+	   </form>
+	   <input type="range" class='rangeBars' id="avgBlocktimeBar" width="100px" min=".1" max="600" value="10" step=".1" oninput="avgBlocktimeBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	   <form action="">
+	     <h3 class='valTitle'>Blockchain Increase </h3>
+	     <p class='valUnits'>(Size Per Year in GB)</p>
+	     <input type="text" class='valInput' id="blockchainIncrease" value="48.983842134154685" onblur="blockchainIncreaseBar(this.value)" />
+	   </form>
+	   <input type="range" class='rangeBars' id="blockchainIncreaseBar" width="100px" min=".1" max="10000" value="48.983842134154685" step=".1" oninput="blockchainIncreaseBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	  <form action="">
+	    <h3 class='valTitle'>Unique Bitcoiners</h3>
+	    <p class='valUnits'>(# of People)</p>
+	    <input type="text" class='valInput' value="10,000,000" id="uniqueBitcoiners" onblur="uniqueBitcoinersBar(this.value)" />
+	  </form>
+	  <input type="range" class='rangeBars' id="uniqueBitcoinersBar" width="100px" min="100000" max="7000000000" value="10000000" step="1" oninput="uniqueBitcoinersBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	   <form action="">
+	     <h3 class='valTitle'>Overall Avg Tx's</h3>
+	     <p class='valUnits'>(Per Second)</p>
+	     <input type="text" class='valInput' value="3.623333333333" id="overallTxPerSec" onblur="overallTxPerSecBar(this.value)" />
+	   </form>
+	   <input type="range" class='rangeBars' id="overallTxPerSecBar" width="100px" min=".1" max="20000" value="3.623333333333" step=".1" oninput="overallTxPerSecBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	   <form action="">
+	     <h3 class='valTitle'>Avg # of Tx's </h3>
+	     <p class='valUnits'>(Per Person Per Year)</p>
+	     <input type="text" class='valInput' id="avgTxPerPersPerYear" value="11.4343704" onblur="avgTxPerPersPerYearBar(this.value)" />
+	   </form>
+	   <input type="range" class='rangeBars' id="avgTxPerPersPerYearBar" width="100px" min="1" max="10000" value="11.4343704" step=".25" oninput="avgTxPerPersPerYearBar(this.value)" /> <br/>
+	</div>
+	                               
+	<div class='valueBox'>
+	   <form action="">
+	     <h3 class='valTitle'>Avg Tx Size</h3>
+	     <p class='valUnits'>(in Bytes)</p>
+	     <input type="text" class='valInput' id="avgTxSize" value="459.98160074" onblur="avgTxSizeBar(this.value)" />
+	   </form>
+	   <input type="range" class='rangeBars' id="avgTxSizeBar" width="100px" min="40" max="10000" value=".9536743164" step="1" oninput="avgTxSizeBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	   <form action="">
+	     <h3 class='valTitle'>Avg # of Tx's</h3>
+	     <p class='valUnits'>(Per Block)</p>
+	     <input type="text" class='valInput' id="avgTxPerBlock" value="2174" onblur="avgTxPerBlockBar(this.value)" />
+	   </form>
+	   <input type="range" class='rangeBars' id="avgTxPerBlockBar" width="100px" min="1" max="100000" value="2174" step="1" oninput="avgTxPerBlockBar(this.value)" /> <br/>
+	</div>
+
+	<div class='valueBox'>
+	  <form action="">
+	   <h3 class='valTitle'>Max Tx Per Year</h3>
+	   <p class='valUnits'>(Bitcoin Tx's)</p>
+	   <input type="text" class='valInput' value="114,343,704" id="maxTxPerYear" onblur="maxTxPerYearBar(this.value)" />
+	  </form>
+	  <input type="range" class='rangeBars' id="maxTxPerYearBar" width="100px" min="1000000" max="100000000000" value="114343704" step="1" oninput="maxTxPerYearBar(this.value)" /> <br/>
+	</div>
+	         
+</div>
+</div>
+
+ <div class='extrasContainer' >
+    <p>Current Blocksize = 1,000,000 Bytes This divided<br> 
+    by 1024 twice will give you ~.95367 Megabytes.</p>
+    <hr class="extraHR"/>
+    <p>How minutes are being calculated for year: <br>
+    (1 year * 365.25 days * 24 hours * 60 minutes)
+
+ </div>
+
+
+<footer class="footer">
+  <div class='foot1'>
+	<p>Please note this is very much a work in progress, more to come soon! (like segwit and Lightning Network scenarios) </p>
+	<p><i>Suggestions on how this can be better?</i><a href="https://twitter.com/miketwenty1/"> @miketwenty1</a></p>
+  </div>
+  <hr />
+  <div class='foot2'>
+	<p>Listen to us talk about segwit, transaction malleablity, and lightning network on SoundCloud,<a href="https://soundcloud.com/blocktime/blocktime-ep-4-segwit-and-transaction-malleability-discussion"> Blocktime Podcast</a></p>
+    <p>Enjoy What you see? Donate to Bitcoin Education through the TAB meetup group, <a href="https://www.meetup.com/The-Atlanta-Blockchain/"> Meetup Link</a></p>
+    <p>1MZjTbx1Qho2KY5s7EetLcQBXCyjqySpUh</p>
+  </div>
+</footer>
+
+
+<script type='text/javascript' src='./scripts/main.js'></script>
 </body>
-<script>
-
-
-function numberWithCommas(x) {
-    var parts = x.toString().split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return parts.join(".");
-}
-
-function capacityBar(newValue)
-{
-   document.getElementById("capacity").innerHTML=newValue;
-   FromBlocksize(document.getElementById("blocksize").value);
-}
-
-function blocksizeBar(newValue)
-{
-   document.getElementById("blocksizeBar").value=newValue.replace(/,/g , "");
-   document.getElementById("blocksize").value=numberWithCommas(newValue.replace(/,/g , ""));
-   FromBlocksize(newValue.replace(/,/g , ""));
-}
-
-function avgBlocktimeBar(newValue)
-{
-   document.getElementById("avgBlocktime").value=numberWithCommas(newValue.replace(/,/g , ""));
-   document.getElementById("avgBlocktimeBar").value=newValue.replace(/,/g , "");
-   FromBlocksize(document.getElementById("blocksize").value.replace(/,/g , ""));
-}
-function blockchainIncreaseBar(newValue)
-{
-   document.getElementById("blockchainIncreaseBar").value=newValue.replace(/,/g , "");
-   document.getElementById("blockchainIncrease").value=numberWithCommas(newValue.replace(/,/g , ""));
-   FromBlockchainIncrease(newValue.replace(/,/g , ""));
-}
-function uniqueBitcoinersBar(newValue)
-{
-   document.getElementById("uniqueBitcoinersBar").value=newValue.replace(/,/g , "");
-   document.getElementById("uniqueBitcoiners").value=numberWithCommas(newValue.replace(/,/g , ""));
-   FromUniqueBitcoiners(newValue.replace(/,/g , ""));
-}
-function overallTxPerSecBar(newValue)
-{
-   document.getElementById("overallTxPerSecBar").value=newValue;
-   document.getElementById("overallTxPerSec").value=numberWithCommas(newValue.replace(/,/g , ""));
-   FromOveralTxPerSec(newValue.replace(/,/g , ""));
-}
-function avgTxPerPersPerYearBar(newValue)
-{
-   document.getElementById("avgTxPerPersPerYear").value=numberWithCommas(newValue.replace(/,/g , ""));
-   document.getElementById("avgTxPerPersPerYearBar").value=newValue;
-   FromAvgTxPerPersPerYear(newValue.replace(/,/g , ""));
-}
-function avgTxSizeBar(newValue)
-{
-   document.getElementById("avgTxSize").value=numberWithCommas(newValue.replace(/,/g , ""));
-   document.getElementById("avgTxSizeBar").value=newValue.replace(/,/g , "");
-   FromBlocksize(document.getElementById('blocksize').value.replace(/,/g , ""));
-}
-function avgTxPerBlockBar(newValue)
-{
-   document.getElementById("avgTxPerBlock").value=numberWithCommas(newValue.replace(/,/g , ""));
-   document.getElementById("avgTxPerBlockBar").value=newValue.replace(/,/g , "");
-   FromAvgTxPerBlock(newValue.replace(/,/g , ""));
-
-}
-function maxTxPerYearBar(newValue)
-{
-   document.getElementById("maxTxPerYear").value=numberWithCommas(newValue.replace(/,/g , ""));
-   document.getElementById("maxTxPerYearBar").value=newValue.replace(/,/g , "");
-   FromMaxTxPerYearBar(newValue.replace(/,/g , ""));
-}
-
-
-function SetDefaults()
-{
-//Forms
-document.getElementById('capacity').innerHTML=("100");
-
-document.getElementById('blocksize').value=("0.9536743164");
-document.getElementById('avgBlocktime').value=("10");
-document.getElementById('blockchainIncrease').value=("48.983842134154685");
-
-document.getElementById('uniqueBitcoiners').value=("10,000,000");
-document.getElementById('overallTxPerSec').value=("3.623333333333");
-document.getElementById('avgTxPerPersPerYear').value=("11.4343704");
-
-document.getElementById('avgTxSize').value=("459.98160074");
-document.getElementById('avgTxPerBlock').value=("2174");
-document.getElementById('maxTxPerYear').value=("114,343,704");
-//Bars
-document.getElementById('capacityBar').value=("100");
-
-document.getElementById('blocksizeBar').value=("0.9536743164");
-document.getElementById('avgBlocktimeBar').value=("10");
-document.getElementById('blockchainIncreaseBar').value=("48.983842134154685");
-
-document.getElementById('uniqueBitcoinersBar').value=("10,000,000");
-document.getElementById('overallTxPerSecBar').value=("3.623333333333");
-document.getElementById('avgTxPerPersPerYearBar').value=("11.4343704");
-
-document.getElementById('avgTxSizeBar').value=("459.98160074");
-document.getElementById('avgTxPerBlockBar').value=("2174");
-document.getElementById('maxTxPerYearBar').value=("114,343,704");
-}
-
-
-function FromBlocksize(val)
-{
-
-var capacity = document.getElementById('capacity').innerHTML;
-var avgBlocktime = parseFloat(document.getElementById("avgBlocktime").value.replace(/,/g , ""));
-//var blockchainIncrease = parseFloat(document.getElementById("blockchainIncrease").value.replace(/,/g , ""));
-
-var uniqueBitcoiners = parseFloat(document.getElementById("uniqueBitcoiners").value.replace(/,/g , ""));
-//var overallTxPerSec = parseFloat(document.getElementById("overallTxPerSec").value.replace(/,/g , ""));
-//var avgTxPerPersPerYear = parseFloat(document.getElementById("avgTxPerPersPerYear").value.replace(/,/g , ""));
-
-var avgTxSize = parseFloat(document.getElementById("avgTxSize").value.replace(/,/g , ""));
-//var maxTxPerBlock = parseFloat(document.getElementById("maxTxPerBlock").value.replace(/,/g , ""));
-//var maxTxPerYear = parseFloat(document.getElementById("maxTxPerYear").value.replace(/,/g , ""));
-// derrived vars
-var effBlocksize = (val*parseFloat(capacity/100));
-var txPerBlock = (effBlocksize*1024*1024/parseFloat(avgTxSize));
-var blocksPerYear = ((60/parseFloat(avgBlocktime))*24)*365.25;
-
-//set vars
-document.getElementById('blockchainIncrease').value=(numberWithCommas((parseFloat(effBlocksize*(1440/parseFloat(avgBlocktime))*365.25)/1024).toFixed(2)));
-document.getElementById('overallTxPerSec').value=numberWithCommas(parseFloat(txPerBlock/parseFloat(avgBlocktime*60)).toFixed(2));
-document.getElementById('avgTxPerPersPerYear').value=numberWithCommas(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(uniqueBitcoiners)).toFixed(2));
-document.getElementById('avgTxPerBlock').value=numberWithCommas(parseFloat(txPerBlock).toFixed(2));
-document.getElementById('maxTxPerYear').value=numberWithCommas(parseFloat(txPerBlock*blocksPerYear).toFixed(0));
-
-document.getElementById('blockchainIncreaseBar').value=((parseFloat(effBlocksize*(1440/parseFloat(avgBlocktime))*365.25)/1024).toFixed(2));
-document.getElementById('overallTxPerSecBar').value=(parseFloat(txPerBlock/parseFloat(avgBlocktime*60)).toFixed(2));
-document.getElementById('avgTxPerPersPerYearBar').value=(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(uniqueBitcoiners)).toFixed(2));
-document.getElementById('avgTxPerBlockBar').value=(parseFloat(txPerBlock).toFixed(2));
-document.getElementById('maxTxPerYearBar').value=(parseFloat(txPerBlock*blocksPerYear).toFixed(0));
-
-}
-
-function FromBlockchainIncrease(val)
-{
-
-   var capacity = document.getElementById('capacity').innerHTML;
-   var avgBlocktime = parseFloat(document.getElementById("avgBlocktime").value.replace(/,/g , ""));
-
-   var uniqueBitcoiners = parseFloat(document.getElementById("uniqueBitcoiners").value.replace(/,/g , ""));
-   //var overallTxPerSec = parseFloat(document.getElementById("overallTxPerSec").value.replace(/,/g , ""));
-   //var avgTxPerPersPerYear = parseFloat(document.getElementById("avgTxPerPersPerYear").value.replace(/,/g , ""));
-
-   var avgTxSize = parseFloat(document.getElementById("avgTxSize").value.replace(/,/g , ""));
-   //var maxTxPerBlock = parseFloat(document.getElementById("maxTxPerBlock").value.replace(/,/g , ""));
-   //var maxTxPerYear = parseFloat(document.getElementById("maxTxPerYear").value.replace(/,/g , ""));
-   // derrived vars
-   
-   var blocksPerYear = ((60/parseFloat(avgBlocktime))*24)*365.25;
-   var effBlocksize = (parseFloat(val*1024/blocksPerYear)*parseFloat(capacity/100));
-   var txPerBlock = (effBlocksize*1024*1024/parseFloat(avgTxSize));
-
-   //set vars
-   document.getElementById('blocksize').value=numberWithCommas(effBlocksize.toFixed(2));
-   document.getElementById('overallTxPerSec').value=numberWithCommas(parseFloat(txPerBlock/parseFloat(avgBlocktime*60)).toFixed(2));
-   document.getElementById('avgTxPerPersPerYear').value=numberWithCommas(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(uniqueBitcoiners)).toFixed(2));
-   document.getElementById('avgTxPerBlock').value=numberWithCommas(parseFloat(txPerBlock).toFixed(2));
-   document.getElementById('maxTxPerYear').value=numberWithCommas(parseFloat(txPerBlock*blocksPerYear).toFixed(0));
-
-   document.getElementById('blocksizeBar').value=effBlocksize;
-   document.getElementById('overallTxPerSecBar').value=(parseFloat(txPerBlock/parseFloat(avgBlocktime*60)).toFixed(2));
-   document.getElementById('avgTxPerPersPerYearBar').value=(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(uniqueBitcoiners)).toFixed(2));
-   document.getElementById('avgTxPerBlockBar').value=(parseFloat(txPerBlock).toFixed(2));
-   document.getElementById('maxTxPerYearBar').value=(parseFloat(txPerBlock*blocksPerYear).toFixed(0));
-
-}
-function FromUniqueBitcoiners(val)
-{
-   var blocksize = document.getElementById('blocksize').value;
-   var capacity = document.getElementById('capacity').innerHTML;
-   var avgBlocktime = parseFloat(document.getElementById("avgBlocktime").value.replace(/,/g , ""));
-
-   var uniqueBitcoiners = parseFloat(document.getElementById("uniqueBitcoiners").value.replace(/,/g , ""));
-   //var overallTxPerSec = parseFloat(document.getElementById("overallTxPerSec").value.replace(/,/g , ""));
-   //var avgTxPerPersPerYear = parseFloat(document.getElementById("avgTxPerPersPerYear").value.replace(/,/g , ""));
-
-   var avgTxSize = parseFloat(document.getElementById("avgTxSize").value.replace(/,/g , ""));
-   //var maxTxPerBlock = parseFloat(document.getElementById("maxTxPerBlock").value.replace(/,/g , ""));
-   //var maxTxPerYear = parseFloat(document.getElementById("maxTxPerYear").value.replace(/,/g , ""));
-   // derrived vars
-   
-   var blocksPerYear = ((60/parseFloat(avgBlocktime))*24)*365.25;
-   var effBlocksize = (blocksize*parseFloat(capacity/100));
-   var txPerBlock = (effBlocksize*1024*1024/parseFloat(avgTxSize));
-
-
-   //document.getElementById('avgTxPerPersPerYear').value=numberWithCommas(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(val)).toFixed(2));
-   //document.getElementById('avgTxPerPersPerYearBar').value=(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(val)).toFixed(2));
-
-   document.getElementById('avgTxPerPersPerYear').value=numberWithCommas(((blocksPerYear*txPerBlock)/val).toFixed(2));
-   document.getElementById('avgTxPerPersPerYearBar').value=((blocksPerYear*txPerBlock)/val).toFixed(2);
-}
-
-function FromOveralTxPerSec(val)
-{
-   var capacity = document.getElementById('capacity').innerHTML;
-   var avgBlocktime = parseFloat(document.getElementById("avgBlocktime").value.replace(/,/g , ""));
-
-   var uniqueBitcoiners = parseFloat(document.getElementById("uniqueBitcoiners").value.replace(/,/g , ""));
-   //var overallTxPerSec = parseFloat(document.getElementById("overallTxPerSec").value.replace(/,/g , ""));
-   //var avgTxPerPersPerYear = parseFloat(document.getElementById("avgTxPerPersPerYear").value.replace(/,/g , ""));
-
-   var avgTxSize = parseFloat(document.getElementById("avgTxSize").value.replace(/,/g , ""));
-   //var maxTxPerBlock = parseFloat(document.getElementById("maxTxPerBlock").value.replace(/,/g , ""));
-   //var maxTxPerYear = parseFloat(document.getElementById("maxTxPerYear").value.replace(/,/g , ""));
-   // derrived vars
-   
-   var blocksPerYear = ((60/parseFloat(avgBlocktime))*24)*365.25;
-   var txPerBlock = parseFloat((60*avgBlocktime))*val;
-   var effBlocksize = ((txPerBlock*avgTxSize)*parseFloat(capacity/100))/1048576;
- 
-   //set vars
-   document.getElementById('blockchainIncrease').value=numberWithCommas((parseFloat(effBlocksize*(1440/parseFloat(avgBlocktime))*365.25)/1024).toFixed(2));
-   document.getElementById('blocksize').value=numberWithCommas(effBlocksize.toFixed(2));
-   //document.getElementById('overallTxPerSec').value=numberWithCommas(parseFloat(txPerBlock/parseFloat(avgBlocktime*60)).toFixed(2));
-   document.getElementById('avgTxPerPersPerYear').value=numberWithCommas(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(uniqueBitcoiners)).toFixed(2));
-   document.getElementById('avgTxPerBlock').value=numberWithCommas(parseFloat(txPerBlock).toFixed(2));
-   document.getElementById('maxTxPerYear').value=numberWithCommas(parseFloat(txPerBlock*blocksPerYear).toFixed(0));
-
-   document.getElementById('blockchainIncreaseBar').value=((parseFloat(effBlocksize*(1440/parseFloat(avgBlocktime))*365.25)/1024).toFixed(2));
-   document.getElementById('blocksizeBar').value=effBlocksize;
-   //document.getElementById('overallTxPerSecBar').value=(parseFloat(txPerBlock/parseFloat(avgBlocktime*60)).toFixed(2));
-   document.getElementById('avgTxPerPersPerYearBar').value=(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(uniqueBitcoiners)).toFixed(2));
-   document.getElementById('avgTxPerBlockBar').value=(parseFloat(txPerBlock).toFixed(2));
-   document.getElementById('maxTxPerYearBar').value=(parseFloat(txPerBlock*blocksPerYear).toFixed(0));
-
-}
-
-function FromAvgTxPerPersPerYear(val)
-{
-   var capacity = document.getElementById('capacity').innerHTML;
-   var avgBlocktime = parseFloat(document.getElementById("avgBlocktime").value.replace(/,/g , ""));
-
-   var uniqueBitcoiners = parseFloat(document.getElementById("uniqueBitcoiners").value.replace(/,/g , ""));
-   //var overallTxPerSec = parseFloat(document.getElementById("overallTxPerSec").value.replace(/,/g , ""));
-   //var avgTxPerPersPerYear = parseFloat(document.getElementById("avgTxPerPersPerYear").value.replace(/,/g , ""));
-
-   var avgTxSize = parseFloat(document.getElementById("avgTxSize").value.replace(/,/g , ""));
-   //var maxTxPerBlock = parseFloat(document.getElementById("maxTxPerBlock").value.replace(/,/g , ""));
-   //var maxTxPerYear = parseFloat(document.getElementById("maxTxPerYear").value.replace(/,/g , ""));
-   // derrived vars
-   
-   var txPerYear = parseFloat(val*uniqueBitcoiners);
-   var blocksPerYear = ((60/parseFloat(avgBlocktime))*24)*365.25;
-   var txPerBlock = parseFloat(txPerYear/blocksPerYear);
-   var effBlocksize = ((txPerBlock*avgTxSize)*parseFloat(capacity/100))/1048576;
- 
-   //set vars
-   document.getElementById('blockchainIncrease').value=numberWithCommas((parseFloat(effBlocksize*(1440/parseFloat(avgBlocktime))*365.25)/1024).toFixed(2));
-   document.getElementById('blocksize').value=numberWithCommas(effBlocksize.toFixed(2));
-   document.getElementById('overallTxPerSec').value=numberWithCommas(parseFloat(txPerBlock/parseFloat(avgBlocktime*60)).toFixed(2));
-   //document.getElementById('avgTxPerPersPerYear').value=numberWithCommas(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(uniqueBitcoiners)).toFixed(2));
-   document.getElementById('avgTxPerBlock').value=numberWithCommas(parseFloat(txPerBlock).toFixed(2));
-   document.getElementById('maxTxPerYear').value=numberWithCommas(parseFloat(txPerBlock*blocksPerYear).toFixed(0));
-
-   document.getElementById('blockchainIncreaseBar').value=((parseFloat(effBlocksize*(1440/parseFloat(avgBlocktime))*365.25)/1024).toFixed(2));
-   document.getElementById('blocksizeBar').value=effBlocksize;
-   document.getElementById('overallTxPerSecBar').value=(parseFloat(txPerBlock/parseFloat(avgBlocktime*60)).toFixed(2));
-   //document.getElementById('avgTxPerPersPerYearBar').value=(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(uniqueBitcoiners)).toFixed(2));
-   document.getElementById('avgTxPerBlockBar').value=(parseFloat(txPerBlock).toFixed(2));
-   document.getElementById('maxTxPerYearBar').value=(parseFloat(txPerBlock*blocksPerYear).toFixed(0));
-}
-
-function FromAvgTxPerBlock(val)
-{
-
-   var capacity = document.getElementById('capacity').innerHTML;
-   var avgBlocktime = parseFloat(document.getElementById("avgBlocktime").value.replace(/,/g , ""));
-
-   var uniqueBitcoiners = parseFloat(document.getElementById("uniqueBitcoiners").value.replace(/,/g , ""));
-   //var overallTxPerSec = parseFloat(document.getElementById("overallTxPerSec").value.replace(/,/g , ""));
-   //var avgTxPerPersPerYear = parseFloat(document.getElementById("avgTxPerPersPerYear").value.replace(/,/g , ""));
-
-   var avgTxSize = parseFloat(document.getElementById("avgTxSize").value.replace(/,/g , ""));
-   //var maxTxPerBlock = parseFloat(document.getElementById("maxTxPerBlock").value.replace(/,/g , ""));
-   //var maxTxPerYear = parseFloat(document.getElementById("maxTxPerYear").value.replace(/,/g , ""));
-   // derrived vars
-
-   //var txPerYear = parseFloat(val*uniqueBitcoiners);
-   var blocksPerYear = ((60/parseFloat(avgBlocktime))*24)*365.25;
-   var txPerBlock = val;
-   var effBlocksize = ((txPerBlock*avgTxSize)*parseFloat(capacity/100))/1048576;
-
-   //set vars
-   document.getElementById('blockchainIncrease').value=numberWithCommas((parseFloat(effBlocksize*(1440/parseFloat(avgBlocktime))*365.25)/1024).toFixed(2));
-   document.getElementById('blocksize').value=numberWithCommas(effBlocksize.toFixed(2));
-   document.getElementById('overallTxPerSec').value=numberWithCommas(parseFloat(txPerBlock/parseFloat(avgBlocktime*60)).toFixed(2));
-   document.getElementById('avgTxPerPersPerYear').value=numberWithCommas(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(uniqueBitcoiners)).toFixed(2));
-   //document.getElementById('avgTxPerBlock').value=numberWithCommas(parseFloat(txPerBlock).toFixed(2));
-   document.getElementById('maxTxPerYear').value=numberWithCommas(parseFloat(txPerBlock*blocksPerYear).toFixed(0));
-
-   document.getElementById('blockchainIncreaseBar').value=((parseFloat(effBlocksize*(1440/parseFloat(avgBlocktime))*365.25)/1024).toFixed(2));
-   document.getElementById('blocksizeBar').value=effBlocksize;
-   document.getElementById('overallTxPerSecBar').value=(parseFloat(txPerBlock/parseFloat(avgBlocktime*60)).toFixed(2));
-   document.getElementById('avgTxPerPersPerYearBar').value=(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(uniqueBitcoiners)).toFixed(2));
-   //document.getElementById('avgTxPerBlockBar').value=(parseFloat(txPerBlock).toFixed(2));
-   document.getElementById('maxTxPerYearBar').value=(parseFloat(txPerBlock*blocksPerYear).toFixed(0));
-
-}
-
-function FromMaxTxPerYearBar(val)
-{
-
-   var capacity = document.getElementById('capacity').innerHTML;
-   var avgBlocktime = parseFloat(document.getElementById("avgBlocktime").value.replace(/,/g , ""));
-
-   var uniqueBitcoiners = parseFloat(document.getElementById("uniqueBitcoiners").value.replace(/,/g , ""));
-   //var overallTxPerSec = parseFloat(document.getElementById("overallTxPerSec").value.replace(/,/g , ""));
-   //var avgTxPerPersPerYear = parseFloat(document.getElementById("avgTxPerPersPerYear").value.replace(/,/g , ""));
-
-   var avgTxSize = parseFloat(document.getElementById("avgTxSize").value.replace(/,/g , ""));
-   //var maxTxPerBlock = parseFloat(document.getElementById("maxTxPerBlock").value.replace(/,/g , ""));
-   //var maxTxPerYear = parseFloat(document.getElementById("maxTxPerYear").value.replace(/,/g , ""));
-   // derrived vars
-
-   //var txPerYear = parseFloat(val*uniqueBitcoiners);
-   
-   var blocksPerYear = ((60/parseFloat(avgBlocktime))*24)*365.25;
-   var txPerBlock = (val)/blocksPerYear;
-   var effBlocksize = ((txPerBlock*avgTxSize)*parseFloat(capacity/100))/1048576;
-
-   //set vars
-   
-   document.getElementById('blockchainIncrease').value=numberWithCommas((parseFloat(effBlocksize*(1440/parseFloat(avgBlocktime))*365.25)/1024).toFixed(2));
-   document.getElementById('blocksize').value=numberWithCommas(effBlocksize.toFixed(2));
-   document.getElementById('overallTxPerSec').value=numberWithCommas(parseFloat(txPerBlock/parseFloat(avgBlocktime*60)).toFixed(2));
-   document.getElementById('avgTxPerPersPerYear').value=numberWithCommas(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(uniqueBitcoiners)).toFixed(2));
-   document.getElementById('avgTxPerBlock').value=numberWithCommas(parseFloat(txPerBlock).toFixed(2));
-   //document.getElementById('maxTxPerYear').value=numberWithCommas(parseFloat(txPerBlock*blocksPerYear).toFixed(0));
-
-   document.getElementById('blockchainIncreaseBar').value=((parseFloat(effBlocksize*(1440/parseFloat(avgBlocktime))*365.25)/1024).toFixed(2));
-   document.getElementById('blocksizeBar').value=effBlocksize;
-   document.getElementById('overallTxPerSecBar').value=(parseFloat(txPerBlock/parseFloat(avgBlocktime*60)).toFixed(2));
-   document.getElementById('avgTxPerPersPerYearBar').value=(parseFloat(((blocksPerYear)*txPerBlock)/parseFloat(uniqueBitcoiners)).toFixed(2));
-   document.getElementById('avgTxPerBlockBar').value=(parseFloat(txPerBlock).toFixed(2));
-   //document.getElementById('maxTxPerYearBar').value=(parseFloat(txPerBlock*blocksPerYear).toFixed(0));
-
-}
-</script>
 </html>
