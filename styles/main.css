@@ -68,15 +68,18 @@ body, html {
 
 .mainBody {
   background-image: url("./images/bitcoinBack.png");
-  background-size: cover; }
+  background-size: cover;
+  padding-top: 30px;
+  padding-bottom: 60px; }
 
 .defaultButton {
   margin: 0 auto;
   width: 25%;
   padding: 8px;
-  border-radius: 8px;
-  margin-top: 20px;
-  background-color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 30px;
+  background-color: #f3f3f3;
   color: #f82525; }
 
 .avgCapacity {

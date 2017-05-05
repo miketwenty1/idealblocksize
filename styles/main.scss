@@ -94,6 +94,8 @@ body, html {
 .mainBody {
    background-image: url('./images/bitcoinBack.png');
    background-size: cover;
+   padding-top: 30px;
+   padding-bottom: 60px;
 }
 
 
@@ -101,9 +103,10 @@ body, html {
    margin: 0 auto;
    width: 25%;
    padding: 8px;
-   border-radius: 8px;
-   margin-top: 20px;
-   background-color: white;
+   border: none;
+   border-radius: 10px;;
+   margin: 30px;
+   background-color: $offWhite;
    color: #f82525;
 }
 
